@@ -163,12 +163,21 @@ export default function POS() {
     setProcessing(true);
 
     try {
+      const items = cart.map(item => ({
+        productId: item.product.id,
+        quantity: item.quantity,
+        price: item.product.price,
+        total: item.product.price * item.quantity,
+      }));
+      
+      const totalAmount = items.reduce((sum, i) => sum + i.total, 0);
+      
       const order = await api.createOrder({
         customerId: customer?.id,
-        items: cart.map(item => ({
-          productId: item.product.id,
-          quantity: item.quantity,
-        })),
+        items,
+        totalAmount,
+        discount: 0,
+        finalAmount: totalAmount,
       });
 
       setLastOrder(order);

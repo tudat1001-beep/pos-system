@@ -135,8 +135,11 @@ class MockApi {
       userId: this.currentUser?.id || '1',
       customerId: data.customerId || 'c1',
       createdAt: new Date().toISOString(),
+      user: { id: this.currentUser?.id || '1', name: this.currentUser?.name || 'Admin User', username: this.currentUser?.username || 'admin' },
+      customer: MOCK_CUSTOMERS.find((c: any) => c.id === (data.customerId || 'c1')),
       items: data.items.map((i: any) => ({
         id: 'i' + (nextItemId++),
+        product: this.products.find((p: any) => p.id === i.productId),
         ...i
       }))
     };
