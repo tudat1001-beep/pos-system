@@ -7,7 +7,6 @@ import {
   Edit,
   Trash2,
   X,
-  Image,
   Package
 } from 'lucide-react';
 

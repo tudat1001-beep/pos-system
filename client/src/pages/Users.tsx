@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { api } from '../lib/api';
 import { User } from '../types';
 import { formatDate } from '../lib/utils';
-import { Plus, Edit, X, Shield, UserCog, Trash2 } from 'lucide-react';
+import { Plus, Edit, X, Shield, UserCog } from 'lucide-react';
 
 interface Permissions {
   canManageProducts: boolean;
@@ -181,7 +181,7 @@ export default function Users() {
                 <p className="text-gray-500">{user.phone}</p>
               )}
               <p className="text-gray-400 text-xs">
-                Ngày tạo: {formatDate(user.createdAt)}
+                Ngày tạo: {formatDate(user.createdAt || new Date())}
               </p>
             </div>
           </div>

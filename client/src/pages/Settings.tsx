@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { api } from '../lib/api';
-import { Store, Phone, MapPin, Mail, Save, CreditCard, ChevronDown, Check } from 'lucide-react';
+import { Store, Save, CreditCard, ChevronDown, Check } from 'lucide-react';
 
 interface Settings {
   store_name: string;

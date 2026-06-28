@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { api } from '../lib/api';
-import { Product, Category, Customer } from '../types';
+import { Product, Category, Customer, StoreSettings } from '../types';
 import { formatCurrency } from '../lib/utils';
 import Invoice from '../components/Invoice';
 import {
@@ -19,17 +19,6 @@ import {
 interface CartItem {
   product: Product;
   quantity: number;
-}
-
-interface StoreSettings {
-  store_name: string;
-  store_address: string;
-  store_phone: string;
-  store_email: string;
-  store_tax: string;
-  bank_bin: string;
-  bank_account: string;
-  bank_account_name: string;
 }
 
 export default function POS() {

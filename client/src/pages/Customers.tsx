@@ -1,15 +1,12 @@
 import { useState, useEffect } from 'react';
 import { api } from '../lib/api';
 import { Customer } from '../types';
-import { formatCurrency } from '../lib/utils';
 import {
   Search,
   Plus,
   Edit,
-  Trash2,
   X,
-  User,
-  Phone
+  User
 } from 'lucide-react';
 
 export default function Customers() {

@@ -1,6 +1,6 @@
 import { formatCurrency, formatDateTime } from '../lib/utils';
 import { Order } from '../types';
-import { Store, Phone, MapPin, CreditCard } from 'lucide-react';
+import { Phone, MapPin, CreditCard } from 'lucide-react';
 
 interface InvoiceProps {
   order: Order;

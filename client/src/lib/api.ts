@@ -126,6 +126,10 @@ class Api {
     return this.request('/customers', { method: 'POST', body: JSON.stringify(data) });
   }
 
+  async updateCustomer(id: string, data: any) {
+    return this.request(`/customers/${id}`, { method: 'PUT', body: JSON.stringify(data) });
+  }
+
   // Users
   async getUsers() {
     return this.request('/users');

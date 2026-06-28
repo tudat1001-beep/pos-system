@@ -5,6 +5,7 @@ export interface User {
   email?: string;
   phone?: string;
   role: 'OWNER' | 'STAFF';
+  createdAt?: string;
 }
 
 export interface Customer {
@@ -22,6 +23,7 @@ export interface Category {
   name: string;
   slug: string;
   image?: string;
+  isActive?: boolean;
   _count?: { products: number };
 }
 
@@ -36,6 +38,7 @@ export interface Product {
   stock: number;
   minStock: number;
   image?: string;
+  isActive?: boolean;
   category?: Category;
   categoryId?: string;
 }
@@ -84,4 +87,15 @@ export interface DashboardData {
   lowStockProducts: { id: string; name: string; sku: string; stock: number; minStock: number }[];
   recentOrders: any[];
   categoryBreakdown: { name: string; revenue: number }[];
+}
+
+export interface StoreSettings {
+  name: string;
+  address: string;
+  phone: string;
+  email?: string;
+  tax?: string;
+  bank_bin?: string;
+  bank_account?: string;
+  bank_account_name?: string;
 }
