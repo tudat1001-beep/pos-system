@@ -45,6 +45,11 @@ class MockApi {
   currentUser: any = null;
   products: any[] = MOCK_CATEGORIES.flatMap(c => c.products);
 
+  constructor() {
+    const user = localStorage.getItem('user');
+    if (user) this.currentUser = JSON.parse(user);
+  }
+
   async login(username: string, password: string) {
     const user = MOCK_USERS.find((u: any) => u.username === username && u.password === password);
     if (!user) throw new Error('Tên đăng nhập hoặc mật khẩu không đúng');
