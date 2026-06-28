@@ -16,15 +16,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      api.getMe()
-        .then((user) => setUser(user))
-        .catch(() => localStorage.removeItem('token'))
-        .finally(() => setLoading(false));
-    } else {
-      setLoading(false);
+    const user = api.getMe();
+    if (user) {
+      setUser(user);
     }
+    setLoading(false);
   }, []);
 
   const login = async (username: string, password: string) => {
